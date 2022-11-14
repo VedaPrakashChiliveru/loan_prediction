@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link href="https://fonts.cdnfonts.com/css/raleway-5"
+            rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/style.css">
+    <title>loan app</title>
+  </head>
+  
+  <body>
+    <div class="BOX">
+  <center><h1 class='main_heading'> Loan Approval Prediction Model</h1></center>
+  <center>
+      <img  class="main-img" src="static\image.png">
+
+  </center>
+
+
+
+  <center>
+      <form class="form-horizontal" action="{{ url_for('predict')}}"method="post">
+           <center>
+        <div class="instructions">
+            <p>Please Enter values for the following fields:</p>
+       </div>
+  </center>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Gender:</b></p>
+
+                     <select id="E" class="form-control" type="number"  name="Gender" required="required">
+                      <option value="0">Gender:</option>
+                      <option value="1">male</option>
+                      <option value="0">female</option>
+                  </select>
+
+
+              </div>
+          </div>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Married:</b></p>
+                  <select class="form-control" type="number"  name="Married" required="required">
+                      <option value="0">Married:</option>
+                      <option value="1">yes</option>
+                      <option value="0">no</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Dependents:</b></p>
+                  <select class="form-control" type="number" name="Dependents" required="required">
+                      <option value="0">Dependents</option>
+                      <option value="0">0</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3+</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Education:</b></p>
+                  <select class="form-control" type="number"  name="Education" required="required">
+                      <option value="0">Education:</option>
+                      <option value="1">Graduate</option>
+                      <option value="0">not Graduate</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>SelfEmployed:</b></p>
+                  <select class="form-control" type="number" name="Self_Employed" required="required">
+                      <option value="0">Self Employed:</option>
+                      <option value="1">yes</option>
+                      <option value="0">no</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Income:</b></p>
+                  <input  class="form-control" type= "text" name="ApplicantIncome" placeholder="Your Income" required="required" />
+              </div>
+          </div>
+
+          <div class="form-group">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>LoanAmount:</b>
+                  </p>
+                  <input  class="form-control" type="text" name="LoanAmount" placeholder="Loan Amount" required="required" />
+              </div>
+          </div>
+
+
+          <div class="form-group">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Term:</b></p>
+                  <select class="form-control" type="number" name="Loan_Amount_Term" required="required">
+                      <option value="0">loan term:</option>
+                      <option value="240">6 months</option>
+                      <option value="360">12 months</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>Credit:</b></p>
+                  <select class="form-control" type="number"  name="Credit_History" required="required">
+                      <option value="0">Credit History:</option>
+                      <option value="1">yes</option>
+                      <option value="0">no</option>
+                  </select>
+              </div>
+          </div>
+          <div class="form-group ">
+              <div class="col-sm-10">
+                  <p style="text-align: left;"><b>PropertyArea:</b></p>
+                  <select class="form-control" type="number" name="Property_Area" required="required">
+                      <option value="0">Property_Area:</option>
+                      <option value="2">urban</option>
+                      <option value="1">semiurban</option>
+                      <option value="0">rural</option>
+                  </select>
+              </div>
+          </div>
+
+          <div class="form-group">
+              <button type="submit" class="button">PREDICT</button>>
+          </div>
+{#          button btn btn-default#}
+      </form>
+
+
+
+      <h2 class="result"></h2>
+
+</center>
+    </div>
+  </body>
+</html>
